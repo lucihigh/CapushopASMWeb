@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Capy Shop</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-paw"></i>
+                    <span>CAPYSHOP</span>
+                </div>
+                <div class="logo-subtitle">Admin Dashboard</div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-item active"><i class="fas fa-check"></i><span>Dashboard</span></a>
+                <a href="#products" class="nav-item"><i class="fas fa-box"></i><span>Product Management</span></a>
+                <a href="#orders" class="nav-item"><i class="fas fa-shopping-cart"></i><span>Order Management</span></a>
+                <a href="#customers" class="nav-item"><i class="fas fa-users"></i><span>Customer Management</span></a>
+                <a href="#storage" class="nav-item"><i class="fas fa-database"></i><span>Storage Management</span></a>
+            </nav>
+        </div>
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="admin-header">
+                <div class="header-title">
+                    <span class="logo"><i class="fas fa-paw"></i> CAPYSHOP</span>
+                    <span class="dashboard-title">Admin Dashboard</span>
+                </div>
+                <div class="header-user">
+                    <span class="user-avatar">AD</span>
+                    <span class="user-name">admin</span>
+                    <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                </div>
+            </div>
+            <div class="content-section" id="dashboard-section">
+                <h2>Dashboard</h2>
+                <div class="dashboard-metrics">
+                    <div class="metric-card"><div class="metric-title">Products</div><div class="metric-value" id="metric-products">0</div></div>
+                    <div class="metric-card"><div class="metric-title">Customers</div><div class="metric-value" id="metric-customers">0</div></div>
+                    <div class="metric-card"><div class="metric-title">Orders</div><div class="metric-value" id="metric-orders">0</div></div>
+                    <div class="metric-card"><div class="metric-title">Revenue</div><div class="metric-value" id="metric-revenue">$0.00</div></div>
+                </div>
+            </div>
+            <div class="content-section" id="products-section" style="display:none;">
+                <h2>Product Management</h2>
+                <p>Manage all products in the store</p>
+                <div class="product-actions-bar">
+                    <button class="add-product-btn">+ Add New Product</button>
+                </div>
+                <div class="products-list" id="products-list"></div>
+            </div>
+            <div class="content-section" id="orders-section" style="display:none;">
+                <h2>Order Management</h2>
+                <p>Manage all customer orders</p>
+                <div class="order-actions-bar">
+                    <select id="order-status-filter-admin">
+                        <option value="all">All Orders</option>
+                        <option value="pending">Pending</option>
+                        <option value="processing">Processing</option>
+                        <option value="shipped">Shipped</option>
+                        <option value="delivered">Delivered</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                    <button class="export-orders-btn">Export Orders</button>
+                </div>
+                <div class="orders-list-admin" id="orders-list-admin"></div>
+            </div>
+            <div class="content-section" id="customers-section" style="display:none;">
+                <h2>Customer Management</h2>
+                <div class="customers-grid" id="customers-grid"></div>
+            </div>
+            <div class="content-section" id="storage-section" style="display:none;">
+                <h2>Storage Management</h2>
+                <div class="storage-actions-bar">
+                    <button class="backup-btn">Backup Data</button>
+                    <button class="restore-btn">Restore Data</button>
+                    <button class="export-btn">Export Data</button>
+                    <button class="clear-btn">Clear All Data</button>
+                </div>
+                <div class="storage-info" id="storage-info"></div>
+            </div>
+        </div>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html> 
